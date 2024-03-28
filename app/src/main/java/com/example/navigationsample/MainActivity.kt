@@ -46,13 +46,29 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyApp() {
+
+    // The object manages the navigation within the NavHost, It keeps track of the
+    // back stack and provides methods to navigate between composable
     val navController = rememberNavController()
+
+    // NavHost:- This is a composable function that displays other composable
+    // functions based on the current navigation state. It’s similar
+    // to a ‘frame’ that swaps out different content based on where you are in the app.
     NavHost(navController = navController, startDestination = "firstscreen") {
+
+        // rout:"firstscreen" is the destination here
+
+        // composable("firstscreen") in a way to declare a destination in the navigation
+        // graph and specify what UI should be shown when navigation to that destination
         composable("firstscreen") {
             FirstScreen {
+
+                // You navigate between composables using the NavController like this
                 navController.navigate("secondscreen")
             }
         }
+
+        // Defines a destination name "secondscreen"
         composable(route = "secondscreen") {
             SecondScreen {
                 navController.navigate("firstscreen")
