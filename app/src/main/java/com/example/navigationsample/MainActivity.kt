@@ -64,20 +64,28 @@ fun MyApp() {
             FirstScreen { name ->
 
                 // You navigate between composables using the NavController like this
+
+                // We are passing $name to the second screen when we are
+                // navigating to it
                 navController.navigate("secondscreen/$name")
             }
         }
 
         // Defines a destination name "secondscreen"
+
+        // The second screen is accepting {name} argument
         composable(route = "secondscreen/{name}") {
 
+            // we are going to get the name from the it: NavBackStackEntry
+
+            // The argument can be null, we will het the string by the key
             val name = it.arguments?.getString("name") ?: "no name"
 
-            SecondScreen(
-                name,
-                navigateToFirstScreen = { navController.navigate("firstscreen") },
-                navigateToThirdScreen = { navController.navigate("thirdscreen") }
-            )
+            SecondScreen(name) {
+                navController.navigate("firstscreen")
+            }
+
+            //navigateToThirdScreen = { navController.navigate("thirdscreen") }
         }
 
         composable("thirdscreen") {
