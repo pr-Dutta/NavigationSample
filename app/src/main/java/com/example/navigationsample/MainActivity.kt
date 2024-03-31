@@ -61,32 +61,30 @@ fun MyApp() {
         // composable("firstscreen") in a way to declare a destination in the navigation
         // graph and specify what UI should be shown when navigation to that destination
         composable("firstscreen") {
-            FirstScreen { name, age ->
+            FirstScreen { name ->
 
                 // You navigate between composables using the NavController like this
 
                 // We are passing $name to the second screen when we are
                 // navigating to it
-                navController.navigate("secondscreen/$name$age")
+                navController.navigate("secondscreen/$name")
             }
         }
 
         // Defines a destination name "secondscreen"
 
         // The second screen is accepting {name} argument
-        composable(route = "secondscreen/{name}{age}") {
+        composable(route = "secondscreen/{name}") {
 
             // we are going to get the name from the it: NavBackStackEntry
 
             // The argument can be null, we will get the string by the key
             val name = it.arguments?.getString("name") ?: "no name"
-            val age = it.arguments?.getInt("age") ?: 0
 
-            SecondScreen(name, age) {
-                navController.navigate("firstscreen")
-            }
-
-            //navigateToThirdScreen = { navController.navigate("thirdscreen") }
+            SecondScreen(
+                name,
+                navigateToFirstScreen = { navController.navigate("firstscreen") },
+                navigateToThirdScreen = { navController.navigate("thirdscreen") })
         }
 
         composable("thirdscreen") {

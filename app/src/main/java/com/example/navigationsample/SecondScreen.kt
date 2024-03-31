@@ -18,9 +18,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun SecondScreen(
     name: String,
-    age: Int,
     navigateToFirstScreen: () -> Unit,
-    //navigateToThirdScreen: () -> Unit
+    navigateToThirdScreen: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -38,7 +37,7 @@ fun SecondScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Hello $age year old $name",
+            text = "Hello $name",
             fontSize = 24.sp
         )
 
@@ -53,7 +52,7 @@ fun SecondScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
-            //navigateToThirdScreen()
+            navigateToThirdScreen()
         }) {
             Text(text = "Go To Third Screen")
         }
@@ -64,5 +63,5 @@ fun SecondScreen(
 @Preview
 @Composable
 fun SecondPreview() {
-    SecondScreen("Pranjal", 25, {})
+    SecondScreen("Mr. Dutta", {}, {})
 }
