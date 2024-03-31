@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun SecondScreen(
     name: String,
+    age: Int?,
     navigateToFirstScreen: () -> Unit,
     navigateToThirdScreen: () -> Unit
 ) {
@@ -30,14 +31,14 @@ fun SecondScreen(
     ) {
 
         Text(
-            text = "This Is The Second Screen",
+            text = "This Is the second screen",
             fontSize = 24.sp
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Hello $name",
+            text = "Hello $age years old $name",
             fontSize = 24.sp
         )
 
@@ -63,5 +64,5 @@ fun SecondScreen(
 @Preview
 @Composable
 fun SecondPreview() {
-    SecondScreen("Mr. Dutta", {}, {})
+    SecondScreen("Mr. Pranjal", 25, {}, {})
 }
