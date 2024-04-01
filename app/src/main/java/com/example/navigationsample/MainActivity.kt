@@ -63,6 +63,7 @@ fun MyApp() {
         composable("firstscreen") {
             FirstScreen { name, age ->
 
+                println("Inside Main Activity First Screen - $age")
                 // You navigate between composables using the NavController like this
 
                 // We are passing $name to the second screen when we are
@@ -80,8 +81,12 @@ fun MyApp() {
 
             // The argument can be null, we will get the string by the key
             val name = it.arguments?.getString("name") ?: "no name"
-            val age: Int? = it.arguments?.getInt("age") ?: 0
 
+            // ----------------------------------------------------------------01-04-2024
+            // I have to learn NavBackStackEntry type
+            val age = it.arguments?.getString("age") ?: "99"
+
+            println("Inside Main Activity Second Screen - $age")
             SecondScreen(
                 name,
                 age,
