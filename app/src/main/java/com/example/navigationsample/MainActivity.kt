@@ -54,13 +54,13 @@ fun MyApp() {
     // NavHost:- This is a composable function that displays other composable
     // functions based on the current navigation state. It’s similar
     // to a ‘frame’ that swaps out different content based on where you are in the app.
-    NavHost(navController = navController, startDestination = "firstscreen") {
+    NavHost(navController = navController, startDestination = "first_screen") {
 
         // rout:"firstscreen" is the destination here
 
         // composable("firstscreen") in a way to declare a destination in the navigation
         // graph and specify what UI should be shown when navigation to that destination
-        composable("firstscreen") {
+        composable("first_screen") {
             FirstScreen { name, age ->
 
                 // You navigate between composables using the NavController like this
