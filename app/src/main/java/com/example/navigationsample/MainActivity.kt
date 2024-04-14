@@ -83,7 +83,7 @@ fun MyApp() {
 
             // ----------------------------------------------------------------01-04-2024
             // I have to learn NavBackStackEntry type
-            val age = it.arguments?.getString("age") ?: "99"
+            val age = it.arguments?.getString("age") ?: "18"
 
             SecondScreen(
                 name,
