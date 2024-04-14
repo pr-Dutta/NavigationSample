@@ -67,14 +67,14 @@ fun MyApp() {
 
                 // We are passing $name to the second screen when we are
                 // navigating to it
-                navController.navigate("secondscreen/$name/$age")
+                navController.navigate("second_screen/$name/$age")
             }
         }
 
         // Defines a destination name "secondscreen"
 
         // The second screen is accepting {name} argument
-        composable(route = "secondscreen/{name}/{age}") {
+        composable(route = "second_screen/{name}/{age}") {
 
             // we are going to get the name from the it: NavBackStackEntry
 
@@ -88,16 +88,16 @@ fun MyApp() {
             SecondScreen(
                 name,
                 age.toInt(),
-                navigateToFirstScreen = { navController.navigate("firstscreen") },
-                navigateToThirdScreen = { navController.navigate("thirdscreen") })
+                navigateToFirstScreen = { navController.navigate("first_screen") },
+                navigateToThirdScreen = { navController.navigate("third_screen") })
         }
 
-        composable("thirdscreen") {
+        composable("third_screen") {
             ThirdScreen {
-                navController.navigate("firstscreen")
+                navController.navigate("first_screen")
             }
 
-            ThirdScreen ({ navController.navigate("firstscreen") })
+            ThirdScreen ({ navController.navigate("first_screen") })
         }
     }
 }
