@@ -72,7 +72,8 @@ fun MyNavigationApp() {
             val age = it.arguments?.getString("age") ?: "18"
 
             SecondScreen(
-                
+                name,
+                age.toInt(),
                 navigateToFirstScreen = { navController.navigate("first_screen") },
                 navigateToThirdScreen = { navController.navigate("third_screen") })
         }
