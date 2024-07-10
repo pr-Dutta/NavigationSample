@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyNavigationApp() {
 
-    // The object manages the navigation within the NavHost, It keeps track of the
+    // This object manages the navigation within the NavHost, It keeps track of the
     // back stack and provides methods to navigate between composable
     val navController = rememberNavController()
 
