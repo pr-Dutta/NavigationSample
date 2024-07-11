@@ -83,7 +83,7 @@ fun MyNavigationApp() {
                 navController.navigate("first_screen")
             }
 
-            ThirdScreen ({ navController.navigate("first_screen") })
+            
         }
     }
 }
