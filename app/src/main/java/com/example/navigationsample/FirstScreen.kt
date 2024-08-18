@@ -33,10 +33,10 @@ fun FirstScreen(navigateToSecondScreen: (String, Int) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Text(
-            text = "This is the first screen",
-            fontSize = 24.sp
-        )
+        // Text(
+        //     text = "This is the first screen",
+        //     fontSize = 24.sp
+        // )
 
         Spacer(modifier = Modifier.height(16.dp))
 
