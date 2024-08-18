@@ -51,6 +51,9 @@ android {
 
 dependencies {
 
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.activity:activity:1.9.1")
     // This two dependencies is for navigating from one screen to the other
     val nav_version = "2.7.7"
     //implementation("androidx.navigation:navigation-compose:$nav_version")

@@ -83,7 +83,6 @@ fun MyNavigationApp() {
                 navController.navigate("first_screen")
             }
 
-            
         }
     }
 }
